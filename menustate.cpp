@@ -1,13 +1,6 @@
-#include <stdio.h>
-
-#include "SDL.h"
-#include "game.h"
-#include "gamestate.h"
 #include "menustate.h"
 
 using namespace gameSnake;
-
-menuState menuState::_menuState;
 
 menuState::menuState()
 {
@@ -31,7 +24,7 @@ void menuState::HandleEvents(Game* game)
 {
     SDL_Event event;
 
-    if (SDL_PollEvent(&event))
+    if(SDL_PollEvent(&event))
     {
         switch (event.type)
         {

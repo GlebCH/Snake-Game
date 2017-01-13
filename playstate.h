@@ -18,12 +18,19 @@ namespace gameSnake
         Map& map = Map::Instance();
         Snake snake;
 
-        static playState _playState;
         Direction dir = RIGHT;
 
         playState();
-    public:
         ~playState();
+
+        playState(const playState&) = delete;
+        playState& operator = (const playState&) = delete;
+    public:
+        static playState& Instance()
+        {
+            static playState ps;\
+            return ps;
+        }
 
         void Pause();
         void Resume();
@@ -31,8 +38,6 @@ namespace gameSnake
         void HandleEvents(Game*);
         void Update(Game*);
         void Draw(Game*);
-
-        static playState& Instance() { return _playState; }
     };
 
 }

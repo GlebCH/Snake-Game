@@ -11,7 +11,8 @@ SOURCES += main.cpp \
     playstate.cpp \
     game.cpp \
     map.cpp \
-    snake.cpp
+    snake.cpp \
+    pausestate.cpp
 
 HEADERS += \
     gamestate.h \
@@ -21,4 +22,5 @@ HEADERS += \
     game.h \
     map.h \
     snake.h \
-    pch.h
+    pch.h \
+    pausestate.h

@@ -1,12 +1,11 @@
+#include "game.h"
 #include "playstate.h"
 #include "gamestate.h"
 #include "menustate.h"
-#include "game.h"
+#include "pausestate.h"
+
 
 using namespace gameSnake;
-
-playState playState::_playState;
-
 
 playState::playState()
 {
@@ -19,7 +18,7 @@ playState::~playState() {}
 
 void playState::Pause()
 {
-    printf("CPlayState Pause\n");
+
 }
 
 void playState::Resume()
@@ -38,6 +37,9 @@ void playState::HandleEvents(Game* game)
     {
         switch(event.key.keysym.sym)
         {
+            case SDLK_ESCAPE:
+                game->pushState(pauseState::Instance());
+                break;
             case SDLK_UP:
                 if(dir != DOWN) dir = UP;
                 break;

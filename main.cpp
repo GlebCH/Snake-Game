@@ -9,7 +9,7 @@ using namespace gameSnake;
 int main ()
 {
     Game game;
-    // load the intro
+
     game.changeState(menuState::Instance());
 
     // main loop

@@ -8,7 +8,7 @@
 
 namespace gameSnake
 {
-    class Snake//не синглтон
+    class Snake
     {
     private:
         const unsigned size;
@@ -22,8 +22,8 @@ namespace gameSnake
         unsigned getY() { return snake.back().getY(); }
 
         void toMap();
-        void next(unsigned, unsigned);//идем дальше
-        void goUp(unsigned, unsigned);//увеличиваемся
+        void next(unsigned, unsigned);
+        void goUp(unsigned, unsigned);
     };
 }
 

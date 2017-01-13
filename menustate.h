@@ -10,12 +10,19 @@ namespace gameSnake
     class menuState : public gameState
     {
     private:
-        static menuState _menuState;
-
         SDL_Surface* bg;
+
         menuState();
-    public:
         ~menuState();
+
+        menuState(const menuState&) = delete;
+        menuState& operator = (const menuState&) = delete;
+    public:
+        static menuState& Instance()
+        {
+            static menuState ms;
+            return ms;
+        }
 
         void Pause();
         void Resume();
@@ -23,8 +30,6 @@ namespace gameSnake
         void HandleEvents(Game*);
         void Update(Game*);
         void Draw(Game*);
-
-        static menuState& Instance() { return _menuState; }
     };
 
 }
